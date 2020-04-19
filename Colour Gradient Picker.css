@@ -1,0 +1,45 @@
+html,body
+{
+height: 98.6%;    
+}
+header
+{
+height:10%
+}
+main
+{
+height:85%
+}
+footer
+{
+height:5%
+}
+
+#Output_Section
+{
+display:none;
+}
+table,td
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+#colour_picker1_text,#colour_picker1_text
+{
+    width: 40%;
+}
+.main_div
+{   height: 100%;
+    width: 43.33%;
+    float: left;
+
+}
+.left_div,.right_div
+{
+    height: 100%;
+    width: 28.33%;
+    float: left;
+}
+.right_div
+{overflow-y: scroll;
+}

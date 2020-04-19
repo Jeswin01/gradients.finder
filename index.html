@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html>
+    <head>
+        <title>
+            Colour Gradient Picker
+        </title>    
+        <link rel="stylesheet" type="text/css" href="Colour Gradient Picker.css"/>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <header>
+            <center><b>Colour Gradient Selector</b></center>
+        </header>
+        <main>
+            <div class="left_div"></div>
+            <div class="main_div">
+            <div class="d-flex flex-column align-items-center">
+                <label for="operation">Select your Operation:</label>
+                    <select id="operation">
+                    <option value="ahead">Find Colour gradients ahead of the 2 input colours</option>
+                    <option value="between" selected>Find Colour gradients between the 2 input colours</option>
+                    <option value="behind">Find Colour gradients behind the 2 input colours</option>
+                    </select>
+                <br/>
+                <br/>
+                <label for="colour_picker1">Input Colour 1:</label>
+                <input type="color" id="colour_picker1" value="#000000" />
+                OR
+                <input type="text" id="colour_picker1_text" placeholder="Enter hexcode and press Enter" />
+                <br/>
+                <label for="colour_picker2">Input Colour 2:</label>
+                <input type="color" id="colour_picker2" value="#ffffff" />
+                OR
+                <input type="text" id="colour_picker2_text"  placeholder="Enter hexcode and press Enter" />
+                <br/>
+                <br/>
+                <label for="gradient_count">Required count of output Colour gradients</label>
+                <input type="number" id="gradient_count" value="2"/>
+                <br/>
+                <br/>
+                <label for="colour_system">Required Colour system in output colours</label>
+                <select id="colour_system">
+                    <option value="hex" selected>Hex Code</option>
+                    <option value="rgb">RGB</option>
+                </select>
+                <br/>
+                <br/>
+                <input type="button" class="btn btn-primary" value="Get Gradients" id="get_gradients_button"/>  
+            </div>
+        </div>
+        <div class="right_div">
+            <section id="Output_Section">
+                    <div class="d-flex flex-column align-items-center">
+                    Output
+                    <table id="output_table">
+                    </table>
+                    </div>
+                </section>
+        </div>
+        </main>
+        <footer>
+            <center>All Rights Reserved</center>
+        </footer>
+
+        <script src="jquery-3.5.0.min.js"></script>
+        <script src="Colour Gradient Picker.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>.js"></script>
+    </body>
+</html>
