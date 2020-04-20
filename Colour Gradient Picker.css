@@ -12,11 +12,13 @@ height:10%
 }
 main
 {
-height:85%
+height:85%;
+overflow-y:auto;
 }
 footer
 {
-height:5%
+height:5%;
+position: sticky;
 }
 
 #Output_Section
@@ -28,22 +30,63 @@ table,td
 border: 1px solid black;
 border-collapse: collapse;
 }
-#colour_picker1_text,#colour_picker1_text
-{
-    width: 40%;
-}
-.main_div
-{   height: 100%;
-    width: 43.33%;
-    float: left;
 
-}
 .left_div,.right_div
 {
     height: 100%;
-    width: 28.33%;
-    float: left;
 }
 .right_div
 {overflow-y: scroll;
+}
+#copy_button
+{
+float: right;
+}
+#operation,#colour_picker1_text,#colour_picker2_text,#gradient_count,#colour_system
+{
+    width: 70%;
+}
+#colour_picker1,#colour_picker2
+{
+    width:50%
+}
+#operation,#colour_picker1_text,#colour_picker2_text,#gradient_count,#colour_system
+{
+text-align: center; 
+}
+@media screen and (min-width:872.1px)
+{
+    .left_div,.right_div{
+        width: 28.33%;
+        float: left;
+        }
+    .left_div{
+        display: revert;
+        }
+    .main_div{   
+        height: 100%;
+        width: 43.33%;
+        float: left;
+        }    
+
+}
+@media screen and (max-width:872px)
+{
+    .main_div,.right_div{
+        height: 50%;
+        width: 100%;
+        float:none;
+        }
+        .main_div{
+        overflow:auto;
+        }
+        .right_div{
+
+        }
+    .left_div{
+        display: none;
+        }    
+    #operation,#colour_picker1,#colour_picker1_text,#colour_picker2,#colour_picker2_text,#gradient_count,#colour_system{
+        width: 80%;
+        }
 }
