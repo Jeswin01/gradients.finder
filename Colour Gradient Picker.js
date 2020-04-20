@@ -34,7 +34,7 @@ return "#" + r + g + b;
 
 function getGradients()
 {
-let res_rgbs=[];    
+res_rgbs=[];    
 const operation=document.getElementById("operation").value;
 var input_colour_1=document.getElementById("colour_picker1").value;
 var input_colour_2=document.getElementById("colour_picker2").value;
@@ -199,4 +199,21 @@ $("#colour_picker2_text").on("keypress",function(){
     }
 });
 
+let res_rgbs;
 $("#get_gradients_button").on("click",getGradients);
+$("#copy_button").on("click",function(){
+if(res_rgbs.length==0){alert("No output found.Try clicking on 'Get radients' button again");}
+let clipboard_text=""; 
+clipboard_text='1:"'+res_rgbs[0]+'"';
+for(let index=1;index<res_rgbs.length;index++)
+{
+    clipboard_text=clipboard_text+","+(index+1)+':"'+res_rgbs[index]+'"';
+}
+console.log(clipboard_text);
+let dummy=document.createElement("textarea");
+document.body.appendChild(dummy);
+dummy.value=clipboard_text;
+dummy.select();
+document.execCommand("copy");
+document.body.removeChild(dummy);
+});
