@@ -119,9 +119,9 @@ if(operation==="ahead")
         for(let index=0;index<output_gradient_count;index++)
         {
             let cur_rgb=[];
-            cur_rgb[0]=Math.round(tempr+(rdiff/output_gradient_count));
-            cur_rgb[1]=Math.round(tempg+(gdiff/output_gradient_count));
-            cur_rgb[2]=Math.round(tempb+(bdiff/output_gradient_count));
+            cur_rgb[0]=Math.round(tempr+(rdiff/(output_gradient_count+1)));
+            cur_rgb[1]=Math.round(tempg+(gdiff/(output_gradient_count+1)));
+            cur_rgb[2]=Math.round(tempb+(bdiff/(output_gradient_count+1)));
             
             for(let index in cur_rgb)
             {
