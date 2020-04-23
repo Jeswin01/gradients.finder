@@ -10,6 +10,16 @@ header
 {
 height:10%
 }
+#header_top
+{background: linear-gradient(45deg,violet,indigo,blue,green,yellow,orange,red);
+    height:10%;
+}
+#header_title
+{
+background: linear-gradient(45deg,aliceblue,blueviolet,aliceblue);
+height: 90%;
+overflow: hidden;
+}
 main
 {
 height:85%;
@@ -19,6 +29,7 @@ footer
 {
 height:5%;
 position: sticky;
+background:linear-gradient(0deg,aliceblue,skyblue)
 }
 
 #Output_Section
