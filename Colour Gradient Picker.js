@@ -55,6 +55,18 @@ if(operation==="ahead")
         let tempr=input_colour_2_rgb[0];
         let tempg=input_colour_2_rgb[1];
         let tempb=input_colour_2_rgb[2];
+        if(tempr+(rdiff*output_gradient_count)>=255)
+        {
+            rdiff=(255-input_colour_2_rgb[0])/(output_gradient_count+1)
+        }
+        if(tempg+(gdiff*output_gradient_count)>=255)
+        {
+            gdiff=(255-input_colour_2_rgb[1])/(output_gradient_count+1)
+        }
+        if(tempb+(bdiff*output_gradient_count)>=255)
+        {
+            bdiff=(255-input_colour_2_rgb[2])/(output_gradient_count+1)
+        }
         for(let index=0;index<output_gradient_count;index++)
         {
             let cur_rgb=[];
@@ -85,6 +97,18 @@ if(operation==="ahead")
         let tempr=input_colour_1_rgb[0];
         let tempg=input_colour_1_rgb[1];
         let tempb=input_colour_1_rgb[2];
+        if(tempr-(rdiff*output_gradient_count)<=0)
+        {
+            rdiff=(input_colour_1_rgb[0]-0)/(output_gradient_count+1)
+        }
+        if(tempg-(gdiff*output_gradient_count)<=0)
+        {
+            gdiff=(input_colour_1_rgb[1]-0)/(output_gradient_count+1)
+        }
+        if(tempb-(bdiff*output_gradient_count)<=0)
+        {
+            bdiff=(input_colour_1_rgb[2]-0)/(output_gradient_count+1)
+        }
         for(let index=0;index<output_gradient_count;index++)
         {
             let cur_rgb=[];
@@ -177,7 +201,7 @@ $("#colour_picker1_text").on("keypress",function(){
     let colour_picker1_text=$("#colour_picker1_text")[0].value;
     if(colour_picker1_text.length===6 || colour_picker1_text.length===7)
     {
-        if(colour_picker1_text.length===6) 
+        if(colour_picker1_text.length===6 && (colour_picker1_text.includes("#")===false)) 
             {
                 colour_picker1_text="#"+colour_picker1_text;
                 $("#colour_picker1_text")[0].value=colour_picker1_text;
@@ -190,7 +214,7 @@ $("#colour_picker2_text").on("keypress",function(){
     let colour_picker2_text=$("#colour_picker2_text")[0].value;
     if(colour_picker2_text.length===6 || colour_picker2_text.length===7)
     {
-        if(colour_picker2_text.length===6) 
+        if(colour_picker2_text.length===6  && (colour_picker2_text.includes("#")===false)) 
             {
                 colour_picker2_text="#"+colour_picker2_text;
                 $("#colour_picker2_text")[0].value=colour_picker2_text;
@@ -199,6 +223,12 @@ $("#colour_picker2_text").on("keypress",function(){
     }
 });
 
+$("#colour_picker1").on("input",function(){
+    $("#colour_picker1_text")[0].value=document.getElementById("colour_picker1").value;
+});
+$("#colour_picker2").on("input",function(){
+    $("#colour_picker2_text")[0].value=document.getElementById("colour_picker2").value;
+});
 let res_rgbs;
 $("#get_gradients_button").on("click",getGradients);
 $("#copy_button").on("click",function(){
