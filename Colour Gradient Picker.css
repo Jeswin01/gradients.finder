@@ -14,11 +14,23 @@ height:10%
 {background: linear-gradient(45deg,violet,indigo,blue,green,yellow,orange,red);
     height:10%;
 }
-#header_title
+#header_bottom
 {
 background: linear-gradient(45deg,aliceblue,blueviolet,aliceblue);
 height: 90%;
 overflow: hidden;
+}
+
+#header_bottom_left
+{
+    width: 85%;
+    float: left;
+}
+#header_bottom_right
+{
+    width: 15%;
+    float: left;
+    height: 100%;
 }
 main
 {
@@ -65,7 +77,7 @@ float: right;
 {
 text-align: center; 
 }
-@media screen and (min-width:872.1px)
+@media screen and (min-width:872.1px),(min-height:555.1px)
 {
     .left_div,.right_div{
         width: 28.33%;
@@ -81,7 +93,7 @@ text-align: center;
         }    
 
 }
-@media screen and (max-width:872px)
+@media screen and (max-width:872px),(max-height:555px)
 {
     .main_div,.right_div{
         height: 50%;
@@ -91,13 +103,12 @@ text-align: center;
         .main_div{
         overflow:auto;
         }
-        .right_div{
 
-        }
     .left_div{
         display: none;
         }    
     #operation,#colour_picker1,#colour_picker1_text,#colour_picker2,#colour_picker2_text,#gradient_count,#colour_system{
         width: 80%;
         }
+
 }
